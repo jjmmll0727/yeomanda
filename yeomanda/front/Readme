@@ -13,8 +13,11 @@ Call<ProfileResponseDto> showProfile(
 );
 
 로 보낼 경우에는 리퀘스트가 잘 간다.
+만일 전자처럼 바로 key-value 형식으로 하고 싶다면 @Body 대신 @Field를 써주면 된다.(단, @Field를 쓸경우 @Post윗줄에 @FormUrlEncoded를 추가 해줘야 한다.
+@Body는 java Object를 통째로 직렬화 해서 보낼 때 사용한다. 이것이 가능한 이유는 Retrofit이 Gson컨버터와 함께 쓰이기 때문이다.
+Dto(Data Transfer Object)를 이용하면 JsonObject에 담고 key-value로 쌍을 안지어줘도 되기 때문에 사용하기 편하다.
 
-SocketIO 오류
+# SocketIO 오류
 처음 소켓연결이 안되어서 구글링을 하여
 버전 문제라는 것을 알았다. 그래서 1.0.0 version -> 2.0.0 version으로 바꿔서 해결을 했다.
 
